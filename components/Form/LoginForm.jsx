@@ -1,5 +1,5 @@
 "use client";
-import { loginAction } from "@/app/actions/loginAction";
+import { loginAction } from "@/app/actions/user/loginAction";
 import { AppContext } from "@/context/AppContext";
 import { useUser } from "@/hooks/useUser";
 import React, { useContext } from "react";
@@ -20,7 +20,7 @@ export default function LoginForm() {
     }
   };
   return (
-    <>
+    <div className="w-[300px]">
       <form
         onSubmit={(e) => handleLogin(e)}
         className="flex flex-col max-w-[300px] gap-2 p-4 bg-slate-400 justify-center items-center text-black"
@@ -30,6 +30,6 @@ export default function LoginForm() {
         <button type="submit">Acceder</button>
       </form>
       <button onClick={logout}>Logout</button>
-    </>
+    </div>
   );
 }

@@ -9,3 +9,10 @@ export const userDoNotExists = {
 export const unknowError = {
     error: 'Oops! Ha ocurrido un error desconocido'
 }
+export const imageNull = {
+    error:'La imagen es obligatoria'
+}
+
+export const imageUploadError = {
+    error: "Ha ocurrido un error al subir la imagen"
+}

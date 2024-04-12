@@ -12,5 +12,7 @@ export const useUser = () => {
     appLogout();
   }
 
-  return {currentUser, logUser, logout};
+  const isLogged = () => currentUser != null;
+
+  return {currentUser, logUser, logout, isLogged};
 };

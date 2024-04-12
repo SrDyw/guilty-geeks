@@ -1,0 +1,77 @@
+:root {
+  --transition-speed: 0.3s;
+}
+
+.modal-body {
+  min-width: 200px;
+  /* min-height: 200px; */
+  background-color: #0e0e0e;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.171);
+  top: 50%;
+
+  position: fixed;
+  padding: 10px;
+  z-index: 70;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.modal-closed {
+  pointer-events: none;
+}
+
+.modal-open .modal-body {
+  opacity: 1;
+  transition: var(--transition-speed) ease-in-out;
+  transform: translate(-50%, -50%);
+}
+.modal-closed .modal-body {
+  transform: translate(-50%, calc(-50% - 15px));
+
+  opacity: 0;
+  transition: var(--transition-speed) ease-in-out;
+}
+
+.panel {
+  position: fixed;
+  z-index: 60;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+.modal-open .panel {
+  background-color: rgba(0, 0, 0, 0.541);
+  transition: var(--transition-speed);
+}
+
+.modal-closed .panel {
+  background-color: rgba(0, 0, 0, 0);
+  transition: var(--transition-speed);
+}
+.modal-header {
+  position: relative;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.modal-close-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: none;
+  outline: none;
+  width: 36px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: transparent;
+  transition: 0.2s;
+}
+.modal-close-btn:hover {
+  background-color: rgba(255, 0, 0, 0.486);
+}

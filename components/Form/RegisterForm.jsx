@@ -1,5 +1,5 @@
 "use client";
-import { registerAction } from "@/app/actions/reigsterAction";
+import { registerAction } from "@/app/actions/user/reigsterAction";
 import { AppContext } from "@/context/AppContext";
 import React, { useContext } from "react";
 

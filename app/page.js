@@ -1,18 +1,15 @@
-import LoginForm from "@/components/Form/LoginForm";
-import RegisterForm from "@/components/Form/RegisterForm";
-import UserInfo from "@/components/User/UserInfo";
 import { AppProvider } from "@/context/AppContext";
+import App from "./App";
+import Navbar from "@/components/Navbar/Navbar";
+import { ModalProvider } from "@/context/ModalContext";
 
 export default function Home() {
   return (
     <AppProvider>
-      <div className="flex flex-col gap-5">
-        <RegisterForm />
-        <LoginForm />
-      </div>
-      <div>
-        <UserInfo />
-      </div>
+      <ModalProvider>
+        <Navbar />
+        <App />
+      </ModalProvider>
     </AppProvider>
   );
 }

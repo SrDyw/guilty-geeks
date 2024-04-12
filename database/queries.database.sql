@@ -4,3 +4,10 @@ CREATE TABLE mk_users(
 	lastname VARCHAR(30) NOT NULL,
 	password VARCHAR(15) NOT NULL
 )
+
+CREATE TABLE mk_publicacion(
+	id SERIAL NOT NULL PRIMARY KEY,
+	title TEXT NOT NULL,
+	content TEXT NOT NULL,
+	imageurl  CHAR(256)
+);

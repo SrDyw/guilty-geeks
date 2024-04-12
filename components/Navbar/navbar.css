@@ -1,0 +1,79 @@
+nav {
+  height: 130px;
+  transition: 0.2s;
+}
+
+.navbar-scrolled {
+  height: 68px;
+  background-color: blue;
+}
+
+.nav-link {
+  background-color: transparent;
+  color: white;
+  padding: 10px 20px;
+  transition: 0.2s;
+  font-weight: lighter;
+}
+
+.nav-link:hover {
+  background-color: white;
+  color: black;
+}
+
+.nav-link-active {
+  font-weight: bolder;
+}
+
+.navbar-account-body {
+  position: absolute;
+  right: 0;
+  width: 200px;
+  background-color: #0e0e0e;
+  border: 1px solid #ffffff48;
+  padding: 20px 10px;
+  border-radius: 10px;
+
+  top: 30px;
+  opacity: 0;
+  transition: 0.2s;
+  pointer-events: none;
+}
+.navbar-account-body-open {
+  top: 45px;
+  opacity: 1;
+  pointer-events: all;
+
+}
+.navbar-account-body ul {
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+  text-align: end;
+  gap: 10px;
+}
+.navbar-account-body ul li {
+  background-color: transparent;
+  transition: 0.2s;
+  padding: 5px;
+  border-radius: 10px;
+
+  display: flex;
+  gap: 10px;
+  justify-content: end;
+}
+.navbar-account-body ul li:hover {
+  background-color: rgba(255, 255, 255, 0.171);
+}
+
+
+.navbar-account-body ul .danger-option:hover {
+  background-color: #99132041;
+}
+
+
+@media (max-width: 600px) {
+  .nav-link-list {
+    display: none;
+  }
+}
