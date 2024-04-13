@@ -10,6 +10,7 @@ export default function Modal({
   header,
   footer,
   title,
+  width,
 }) {
   const modalRef = useRef(null);
   const {
@@ -25,26 +26,37 @@ export default function Modal({
   const openState = () => (state == "open" ? "open" : "closed");
 
   useEffect(() => {
-    if (focusState == "closed" && count > 1) onClose();
-    else {
-      setFocusableState("open");
+    if (state == "open") {
+      if (focusState == "closed" && count == 1) onClose();
+      else {
+        setFocusableState("open");
+      }
     }
-    setCount((prev) => prev + 1);
   }, [focusState]);
 
   useEffect(() => {
+    let timeout = null;
     if (state == "open") {
       setCount(0);
       setFocusableState("open");
+
+      timeout = setTimeout(() => {
+        setCount(1);
+      }, 100);
+      return () => {
+        clearTimeout(timeout);
+      };
     }
   }, [state]);
 
   return (
     <div className={`modal modal-${openState()}`}>
       <div className="panel"></div>
-      <div className="modal-body" ref={modalRef}>
+      <div className={`modal-body min-w-[${width ?? "200px"}]`} ref={modalRef}>
         <div className="modal-header">
-          <div className="modal-title">{header || <h2>{title}</h2>}</div>
+          <div className="modal-title relative w-full">
+            {header || <h2 className="text-2xl font-bold">{title}</h2>}
+          </div>
           <button className="modal-close-btn" onClick={onClose}>
             <EquisIcon />
           </button>

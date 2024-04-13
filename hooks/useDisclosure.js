@@ -1,15 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const useDisclosure = () => {
-  const [state, setState] = useState('closed');
+  const [state, setState] = useState("closed");
+  const [render, setRender] = useState(false);
 
   const onOpen = () => {
-    setState('open')
-    console.log("asdasd")
-  }
+    setRender(true);
+    setTimeout(() => {
+      setState("open");
+    }, [100]);
+  };
   const onClose = () => {
-    setState('closed')
-  }
+    setState("closed");
+    setTimeout(() => {
+      setRender(false);
+    }, [1000]);
+  };
 
-  return {state, onClose, onOpen}
+  return { state, onClose, onOpen, render };
 };

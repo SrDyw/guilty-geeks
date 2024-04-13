@@ -13,4 +13,8 @@ export const config = {
       warning: "#ffc107",
     },
   },
+
+  validation: {
+    regexNumber: /^\+\d{1,3}\s\d{6,14}$/,
+  },
 };

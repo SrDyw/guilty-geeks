@@ -16,3 +16,7 @@ export const imageNull = {
 export const imageUploadError = {
     error: "Ha ocurrido un error al subir la imagen"
 }
+
+export const userSavingError = {
+    error : "Ha ocurrido un error registrando el usuario"
+}

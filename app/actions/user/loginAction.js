@@ -7,12 +7,9 @@ import jwt from "jsonwebtoken";
 import { cookies } from "next/headers";
 import { config } from "@/appconfig";
 
-export const loginAction = async ({ name, password }) => {
-  const { rows: users } = await secureQuery("SELECT * FROM mk_users");
+export const loginAction = async ({ contact, password }) => {
+  const { rows: matchedUser } = await secureQuery("SELECT * FROM mk_users  WHERE contact=$1", [contact]);
 
-  const matchedUser = users.filter(
-    (u) => u["name"].toLowerCase() == name.toLowerCase()
-  );
 
   if (matchedUser.length != 0) {
     const user = matchedUser[0];

@@ -18,7 +18,7 @@ export default function AccountNavbar() {
   const { state, exchangeState } = useFocusable({ reference: accountDiv });
   const { currentUser, isLogged, logout } = useUser();
 
-  const { onOpenLogin } = useContext(ModalContext);
+  const { onOpenLogin, onOpenRegister } = useContext(ModalContext);
 
   const AccountOption = ({ label, icon, onClick, color }) => {
     const OptionIcon = icon;
@@ -60,7 +60,7 @@ export default function AccountNavbar() {
           <ul>
             {!isLogged() ? (
               <>
-                <AccountOption label={"Registrate"} icon={UserIcon} />
+                <AccountOption label={"Registrate"} icon={UserIcon} onClick={onOpenRegister}/>
                 <AccountOption label={"Inicia Sesion"} icon={LoginIcon} onClick={onOpenLogin}/>
               </>
             ) : (

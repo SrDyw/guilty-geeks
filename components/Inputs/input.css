@@ -1,0 +1,51 @@
+:root {
+  --lpadding: 10px;
+}
+
+input {
+  width: 100%;
+  border: 1px solid #ffffff48;
+  padding: 20px var(--lpadding) 5px var(--lpadding);
+  outline: none;
+  background-color: #ffffff1f;
+  border-radius: 10px;
+  color: white;
+  position: relative;
+}
+
+.form-group {
+  position: relative;
+}
+
+.form-group label {
+  position: absolute;
+  left: var(--lpadding);
+  max-width: 100%;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  transform-origin: 0;
+
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 4px;
+  border-radius: 10px;
+  padding: 3px 10px;
+  pointer-events: none;
+}
+
+.label-blur {
+  top: 50%;
+  transform: translateY(-50%) scale(1);
+  border: 1px solid #ffffff00;
+
+  transition: .2s;
+}
+
+.label-focus {
+  top: -10px;
+  transform: translateY(0) scale(0.75);
+  background-color: #1d1d1d;
+  border: 1px solid #ffffff38;
+  transition: .2s;
+}

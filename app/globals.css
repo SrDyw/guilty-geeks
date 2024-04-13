@@ -42,6 +42,10 @@ body {
   align-items: center;
 }
 
+input {
+  color: black;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
