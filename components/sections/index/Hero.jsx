@@ -29,5 +29,6 @@ export default function Hero() {
         </button>
       </div>
     </section>
+    
   );
 }

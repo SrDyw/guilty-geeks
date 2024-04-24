@@ -9,7 +9,7 @@ nav {
 .navbar-scrolled {
   height: 68px;
   background-color: #000000a8;
-  border: 1px solid #ffffff48;
+  border-bottom: 1px solid #ffffff48;
   backdrop-filter: blur(10px);
 }
 

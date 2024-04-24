@@ -8,6 +8,25 @@ export const metadata = {
   title: "Guilty Geeks - Build our own world",
   description:
     "All of the information about the gamedev Team named Guilty Geeks are here, from game development, to community management and more.",
+  category: "gaming",
+  keywords: ["guilty geeeks", "gaming", "indie", "cuba"],
+  openGraph: {
+    title: "Guilty Geeks - Build our own world",
+    description:
+      "All of the information about the gamedev Team named Guilty Geeks are here, from game development, to community management and more.",
+    url: "https://guilty-geeks.vercel.app/",
+    siteName: "Guilty Geeks - Build our own world",
+    images: [
+      {
+        url: "https://guilty-geeks.vercel.app/assets/img/Banner.png",
+        width: 1600,
+        height: 900,
+        alt: "Guilty Geeks",
+      },
+    ],
+    locale: "es_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }) {

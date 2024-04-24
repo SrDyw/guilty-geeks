@@ -27,7 +27,7 @@ section {
 }
 
 .banner-image {
-  background: linear-gradient(#000000e7 80%, black),
+  background: linear-gradient(#000000c7 80%, black),
     url("/assets/img/Banner.png");
   background-size: cover;
   background-repeat: no-repeat;
