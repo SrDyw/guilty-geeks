@@ -52,14 +52,49 @@ section {
   margin-top: 20px;
   border-radius: 20px;
   border: 1px solid #474747;
+  scale: 1;
+  transition: 0.2s;
 }
 
 /* Select the not even children from class btn */
 
-
 .btn:nth-child(even) {
-  background-color: #1f1f1f;
   color: white;
   border: 1px solid #272727;
 }
 
+.btn:hover {
+  scale: 1.1;
+}
+
+@media (max-width: 600px) {
+  #home > h1 {
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 4rem;
+  }
+
+  #home > p {
+    font-size: 1rem;
+    text-align: center;
+    line-height: normal;
+    padding: 0 15px;
+  }
+
+  .btn {
+    padding: 15px;
+    font-size: 0.75rem;
+  }
+
+  .button-sec {
+    gap: 5px;
+  }
+}
+
+@media (max-width:700px) {
+  .banner-image {
+    background: linear-gradient(#000000e7 80%, black),
+    url("/assets/img/Banner-portrait.png");
+    background-position: -70px 0;
+  }
+}

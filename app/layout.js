@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Guilty Geeks - Build our own world",
   description:
-    "All of the information about gamedev Team Guilty Geeks are here, from game development, to community management and more.",
+    "All of the information about the gamedev Team named Guilty Geeks are here, from game development, to community management and more.",
 };
 
 export default function RootLayout({ children }) {

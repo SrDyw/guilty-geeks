@@ -56,7 +56,7 @@ export default function AccountNavbar() {
         <div className="icon">
           <AccountUserIcon size={40} className={"account-element"} />
         </div>
-        <div className={`navbar-account-body navbar-account-body-${state}`}>
+        <div className={`navbar-account-body navbar-account-body-${state} gradient`}>
           <ul>
             {!isLogged() ? (
               <>
