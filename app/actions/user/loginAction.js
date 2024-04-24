@@ -1,7 +1,7 @@
 "use server";
 
 import { secureQuery } from "@/database/index.database";
-import { passwordNotMatch, userDoNotExists } from "@/utils/errors";
+import { loginError, passwordNotMatch, userDoNotExists } from "@/utils/errors";
 import { requestToBodyStream } from "next/dist/server/body-streams";
 import jwt from "jsonwebtoken";
 import { cookies } from "next/headers";
@@ -32,10 +32,10 @@ export const loginAction = async ({ contact, password }) => {
 
       return JSON.stringify(user);
     } else {
-      return JSON.stringify(passwordNotMatch);
+      return JSON.stringify(loginError);
     }
   }
-  return JSON.stringify(userDoNotExists);
+  return JSON.stringify(loginError);
 };
 
 const validatePassword = (databasePass, password) => {

@@ -8,6 +8,8 @@ import { useEffect, useState } from "react";
 import { uploadImageAction } from "./actions/upload/cloudinaryImageAction";
 import { uploadImageAction as databaseUploadImageAction } from "./actions/upload/databaseImageAction";
 import { getPublicactionsAction } from "./actions/data/publications/publicationsAction";
+import Hero from "@/components/sections/index/Hero";
+import Projects from "@/components/sections/index/Projects";
 
 export default function App() {
   const [publications, setPublications] = useState([]);
@@ -37,5 +39,11 @@ export default function App() {
       console.log(err);
     }
   };
-  return <div className="mt-[130px] p-10">Bienvinido a Mirkastillito Manage</div>;
+  // return <div className="mt-[130px] p-10">
+  return (
+    <main className="absolute w-full max-w-[1600px] left-[50%] translate-x-[-50%]">
+      <Hero />
+      <Projects/>
+    </main>
+  );
 }

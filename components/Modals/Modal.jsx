@@ -48,11 +48,12 @@ export default function Modal({
       };
     }
   }, [state]);
-
+  const widthPx = width ? width + "px" : null;
+  
   return (
     <div className={`modal modal-${openState()}`}>
       <div className="panel"></div>
-      <div className={`modal-body min-w-[${width ?? "200px"}]`} ref={modalRef}>
+      <div className={`modal-body`} ref={modalRef} style={{minWidth: width ?? "200px"}}>
         <div className="modal-header">
           <div className="modal-title relative w-full">
             {header || <h2 className="text-2xl font-bold">{title}</h2>}

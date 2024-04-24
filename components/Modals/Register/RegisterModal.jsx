@@ -9,9 +9,11 @@ import { config } from "@/appconfig";
 import { ModalContext } from "@/context/ModalContext";
 import ContactIcon from "@/components/icons/ContactIcon";
 import { registerAction } from "@/app/actions/user/reigsterAction";
+import { useNotifications } from "@/hooks/useNotifications";
 
 export default function RegisterModal({ state, onClose }) {
   const { onCloseRegister, onOpenLogin } = useContext(ModalContext);
+  const { notificate } = useNotifications();
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -32,13 +34,17 @@ export default function RegisterModal({ state, onClose }) {
       contact: formData.contact,
     };
     setLoading(true);
-    const response = await registerAction(user);
+    const response = JSON.parse(await registerAction(user));
     if (response.error) {
-      console.log(error);
+      notificate({
+        content: response.error,
+        type: "danger"
+      })
     } else {
       onClose();
     }
-    setLoading(true);
+    console.log(response)
+    setLoading(false);
   };
 
   const LoginHeader = () => {
@@ -88,7 +94,11 @@ export default function RegisterModal({ state, onClose }) {
           icon={<ContactIcon size={"16"} />}
           required={true}
           info={"Ejemplo +53 55390832"}
-          error={(formData.contact != "" && !regexNumber.test(formData.contact)) && "Número inválido. Ejemplo: +53 55390832"}
+          error={
+            formData.contact != "" &&
+            !regexNumber.test(formData.contact) &&
+            "Número inválido. Ejemplo: +53 55390832"
+          }
         />
         <InputText
           value={formData.password}
@@ -125,7 +135,7 @@ export default function RegisterModal({ state, onClose }) {
             color={config.style.colors.primary}
             type={"submit"}
             loading={loading}
-            enable= {regexNumber.test(formData.contact)}
+            enable={regexNumber.test(formData.contact)}
           />
           <p className="m-0 p-0 text-sm">
             ¿Tienes cuenta? Haz click{" "}

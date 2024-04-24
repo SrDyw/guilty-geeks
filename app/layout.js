@@ -5,17 +5,23 @@ import "@/database/index.database";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Mirkastillito",
+  title: "Guilty Geeks - Build our own world",
   description:
-    "All of the information about Mirkastillito, hostal aviable on Historic Center of Old Havana Cuba",
+    "All of the information about gamedev Team Guilty Geeks are here, from game development, to community management and more.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        {children}
-      </body>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Jersey+25&family=Pixelify+Sans:wght@400..700&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

@@ -17,6 +17,7 @@ export default function InputText({
   error,
   info,
   required,
+  onClick
 }) {
   const [focus, setFocus] = useState(false);
   const [floatingState, setFloatingState] = useState(lableState.blur);
@@ -28,6 +29,11 @@ export default function InputText({
     }
     setFloatingState(lableState.focus);
   }, [focus]);
+
+  useEffect(() => {
+    if (valueProp != "") setFloatingState(lableState.focus)
+  }, [valueProp])
+  
 
   return (
     <div className="input-field form-group">
@@ -43,6 +49,7 @@ export default function InputText({
         onBlur={() => setFocus(false)}
         onFocus={() => setFocus(true)}
         required={required}
+        onClick={(e) => onClick && onClick(e)}
       />
       <label htmlFor={name} className={`floating-label ${floatingState}`}>
         <span>{icon && icon}</span>

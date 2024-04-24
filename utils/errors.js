@@ -3,7 +3,10 @@ export const passwordNotMatch = {
 }
 
 export const userDoNotExists = {
-    error: 'El usuario no exite'
+    error: 'El usuario no existe'
+}
+export const loginError = {
+    error: "Numero o contraseña incorrecto/s"
 }
 
 export const unknowError = {
@@ -18,5 +21,10 @@ export const imageUploadError = {
 }
 
 export const userSavingError = {
-    error : "Ha ocurrido un error registrando el usuario"
+    error : "Ha ocurrido un error registrando el usuario",
+    "23505": "El numero seleccionado ya esta en uso"
+}   
+
+export const userPhoneDuplicated = {
+    error : "El numero seleccionado ya esta en uso"
 }

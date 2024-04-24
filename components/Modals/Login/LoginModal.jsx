@@ -9,11 +9,13 @@ import { config } from "@/appconfig";
 import { ModalContext } from "@/context/ModalContext";
 import { loginAction } from "@/app/actions/user/loginAction";
 import { useUser } from "@/hooks/useUser";
+import { useNotifications } from "@/hooks/useNotifications";
 
 export default function LoginModal({ state, onClose }) {
   const { onOpenRegister, onCloseLogin } = useContext(ModalContext);
   const [loading, setLoading] = useState(false);
   const { logUser } = useUser();
+  const {notificate} = useNotifications();
 
   const regexNumber = config.validation.regexNumber;
 
@@ -29,7 +31,10 @@ export default function LoginModal({ state, onClose }) {
       logUser(response);
       onClose();
     } else {
-      console.log(response.error);
+      notificate({
+        content: response.error,
+        type: "danger"
+      })
     }
     setLoading(false);
   };

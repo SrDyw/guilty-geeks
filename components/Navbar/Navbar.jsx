@@ -38,11 +38,11 @@ export default function Navbar() {
         <Link href={"/"} className={"nav-link" + isActive("/")}>
           Inicio
         </Link>
-        <Link href={"#photos"} className={"nav-link" + isActive("/photos")}>
-          Fotos
+        <Link href={"#projects"} className={"nav-link" + isActive("/projects")}>
+          Proyectos
         </Link>
-        <Link href={"#schedule"} className={"nav-link" + isActive("/schedule")}>
-          Calendario
+        <Link href={"#about"} className={"nav-link" + isActive("/about")}>
+          Conócenos
         </Link>
       </ul>
       <AccountNavbar />

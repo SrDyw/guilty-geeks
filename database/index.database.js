@@ -7,12 +7,7 @@ const createPool = (config) => {
 
 export const secureQuery = async (query, values = []) => {
   const pool = createPool(db_config);
-  try {
-    const response = await pool.query(query, values);
-    pool.end();
-    return response;
-  } catch (e) {
-    pool.end();
-    throw new Error(e);
-  }
+  const response = await pool.query(query, values);
+  pool.end();
+  return response;
 };

@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -17,7 +18,11 @@
 }
 * {
   box-sizing: border-box;
+  font-family: Roboto;
+  margin: 0;
+  padding: 0;
 }
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -28,13 +33,25 @@ body {
     rgb(var(--background-start-rgb));
   min-height: calc(100vh - 130px);
   max-width: 1600px;
+
 }
 
-/* html {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
+.app-content {
+  /* width: 100vw; */
+  /* position: absolute;
+  left: 50%;
+  transform: translateX(-50%); */
+}
+
+main {
+  border-left: 1px solid #ffffff27;
+  border-right: 1px solid #ffffff27;
+  /* padding: 5px; */
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 .d-flex-center {
   display: flex;
@@ -46,8 +63,8 @@ input {
   color: black;
 }
 
-@layer utilities {
+/* @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-}
+} */

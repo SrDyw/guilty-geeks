@@ -9,19 +9,22 @@ export default function Button({
   type,
   loading,
   enable = true,
+  children
 }) {
   return (
     <button
       className={
-        `form-button bg-[${
-          color ?? "transparent"
-        }] d-flex-center gap-2 opacity-[${!enable ? 0.5 : 1}] ` + className
+        `form-button d-flex-center gap-2 opacity-[${!enable ? 0.5 : 1}] ` +
+        className
       }
+      style={{
+        background: color ?? "transparent",
+      }}
       type={type}
       disabled={!enable || loading}
     >
       {loading && <Spinner size={25} />}
-      {value}
+      {children || value}
     </button>
   );
 }
